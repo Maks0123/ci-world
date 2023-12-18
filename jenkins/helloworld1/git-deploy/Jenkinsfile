@@ -57,7 +57,8 @@ node('agent') {
 //
 //
           // Run Unittests Stage
-          testsStage.UnitTests(project: "env.PROJECT")
+          testsStage.UnitTests(project: env.PROJECT,
+                               stageName: '')
 //        
 //
 //        // Run Deploy Stage
