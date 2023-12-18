@@ -17,7 +17,9 @@ node('agent') {
 
         // Run Prepare stage
         stage('Prepare') {
-            sh "ls -la jenkins"
+            checkout(scm)
+
+            sh "ls -la"
             println('Load Project vars...')
             load(env.VAR_PATH)
 
