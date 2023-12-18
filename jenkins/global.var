@@ -1,0 +1,1 @@
+env.GLOBAL_VAR_PATH = 'jenkins/global.var'

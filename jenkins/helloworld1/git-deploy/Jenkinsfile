@@ -13,19 +13,24 @@ def deployStage
 node('agent') {
     try {
         // Set Job's ENVs
+        env.GLOBAL_VAR_PATH = 'jenkins/global.var'
         env.VAR_PATH = 'jenkins/helloworld1/project.var'
-
+ 
         // Run Prepare stage
         stage('Prepare') {
 
+            println('SCM...')
             checkout(scm)
+
+            println('Load Global vars...')
+            load(env.GLOBAL_VAR_PATH)
 
             println('Load Project vars...')
             load(env.VAR_PATH)
 
             println('Load Stages..')
           //  buildStage = load(env.Build)
-            gitStage = load(env.Git)
+          //  gitStage = load(env.Git)
             dockerStage = load(env.Docker)
             helmStage = load(env.Helm)
             testsStage = load(env.Tests)
