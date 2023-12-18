@@ -13,7 +13,7 @@ def deployStage
 node('agent') {
     try {
         // Set Job's ENVs
-        env.VAR_PATH = 'jenkins/helloworld1/project.var'
+        env.VAR_PATH = 'jenkins/ci-world/helloworld1/project.var'
 
         // Run Prepare stage
         stage('Prepare') {
