@@ -29,8 +29,8 @@ node('agent') {
             load(env.VAR_PATH)
 
             println('Load Stages..')
-            buildStage = load(env.Build)
-            gitStage = load(env.Git)
+           // buildStage = load(env.Build)
+            //gitStage = load(env.Git)
             //dockerStage = load(env.Docker)
            // helmStage = load(env.Helm)
             //testsStage = load(env.Tests)
@@ -39,29 +39,29 @@ node('agent') {
         }
 
         // Run Git Stage
-        gitStage.GitClone(project: env.PROJECT)
-
-
-        // Run Build Stage
-        buildStage.BuildProject(project: env.PROJECT)
-
-
-        // Run Docker Stage
-        dockerStage.BuildImage(project: env.PROJECT,
-                               version: env.VERSION)
-
-
-        // Run Helm Stage
-        helmStage.HelmPackage(project: env.PROJECT,
-                              version: env.VERSION)
-
-
-        // Run Unittests Stage
-        tetstsStage.UnitTest(project: env.PROJECT)
-        
-
-        // Run Deploy Stage
-        deployStage.Deploy(project: env.PROJECT)
+//        gitStage.GitClone(project: env.PROJECT)
+//
+//
+//        // Run Build Stage
+//        buildStage.BuildProject(project: env.PROJECT)
+//
+//
+//        // Run Docker Stage
+//        dockerStage.BuildImage(project: env.PROJECT,
+//                               version: env.VERSION)
+//
+//
+//        // Run Helm Stage
+//        helmStage.HelmPackage(project: env.PROJECT,
+//                              version: env.VERSION)
+//
+//
+//        // Run Unittests Stage
+//        tetstsStage.UnitTest(project: env.PROJECT)
+//        
+//
+//        // Run Deploy Stage
+//        deployStage.Deploy(project: env.PROJECT)
 
     } catch (Exception errJob) {
         println(errJob)
