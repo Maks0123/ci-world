@@ -33,7 +33,7 @@ node('agent') {
             //gitStage = load(env.Git)
             //dockerStage = load(env.Docker)
             //helmStage = load(env.Helm)
-            def testsStage = load(env.Tests)
+            testsStage = load(env.Tests)
            // deployStage = load(env.Deploy)
 
         }
@@ -57,7 +57,7 @@ node('agent') {
 //
 //
           // Run Unittests Stage
-          testsStage.UnitTest(project: "env.PROJECT")
+          testsStage.Unittests(project: "env.PROJECT")
 //        
 //
 //        // Run Deploy Stage

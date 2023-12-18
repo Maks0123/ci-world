@@ -1,6 +1,6 @@
 /* Stage for package chart
  */
-def UnitTetst(String project, String stageName='') {
+def UnitTests(String project, String stageName='') {
     stage(stageName ? stageName : 'UnitTetsts') {
         println('UnnitTetst... ')
         comm = "sleep 10"
