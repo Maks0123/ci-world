@@ -20,8 +20,6 @@ node('agent') {
 
         // Run Prepare stage
         stage('Prepare') {
-            println('Checkout CI code...')
-            checkout(scm)
 
             println('Load Project vars...')
             load(env.VAR_PATH)
