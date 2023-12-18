@@ -29,12 +29,12 @@ node('agent') {
             load(env.VAR_PATH)
 
             println('Load Stages..')
-            buildStage = load(env.Build)
-            gitStage = load(env.Git)
-            dockerStage = load(env.Docker)
-            helmStage = load(env.Helm)
+            //buildStage = load(env.Build)
+            //gitStage = load(env.Git)
+            //dockerStage = load(env.Docker)
+            //helmStage = load(env.Helm)
             testsStage = load(env.Tests)
-            deployStage = load(env.Deploy)
+           // deployStage = load(env.Deploy)
 
         }
 
