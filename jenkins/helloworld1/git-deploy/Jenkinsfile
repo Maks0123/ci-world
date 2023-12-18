@@ -6,7 +6,7 @@ def buildStage
 def gitStage
 def dockerStage
 def helmStage
-// def testsStage
+def testsStage
 def deployStage
 
 
