@@ -3,7 +3,7 @@
 
 // Stages template
 def buildStage
-//def gitStage
+def gitStage
 def dockerStage
 def helmStage
 def testsStage
@@ -39,7 +39,7 @@ node('agent') {
         }
 
         //Run Git Stage
-        gitStage.GitClone(project: env.PROJECT)
+        gitStage.GitClone(project: "helloworld1")
 
 
 //        // Run Build Stage
