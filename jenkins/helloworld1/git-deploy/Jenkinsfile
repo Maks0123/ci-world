@@ -57,7 +57,7 @@ node('agent') {
 //
 //
           // Run Unittests Stage
-          tetstsStage.UnitTest(project: "env.PROJECT")
+          testsStage.UnitTest(project: "env.PROJECT")
 //        
 //
 //        // Run Deploy Stage
