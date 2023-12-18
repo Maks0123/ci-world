@@ -29,17 +29,17 @@ node('agent') {
             load(env.VAR_PATH)
 
             println('Load Stages..')
-           // buildStage = load(env.Build)
+            buildStage = load(env.Build)
             gitStage = load(env.Git)
-            //dockerStage = load(env.Docker)
-           // helmStage = load(env.Helm)
-            //testsStage = load(env.Tests)
-           // deployStage = load(env.Deploy)
+            dockerStage = load(env.Docker)
+            helmStage = load(env.Helm)
+            testsStage = load(env.Tests)
+            deployStage = load(env.Deploy)
 
         }
 
-        //Run Git Stage
-        gitStage.GitClone(project: "helloworld1")
+          //Run Git Stage
+//        gitStage.GitClone(project: env.PROJECT)
 
 
 //        // Run Build Stage
@@ -56,8 +56,8 @@ node('agent') {
 //                              version: env.VERSION)
 //
 //
-//        // Run Unittests Stage
-//        tetstsStage.UnitTest(project: env.PROJECT)
+          // Run Unittests Stage
+          tetstsStage.UnitTest(project: env.PROJECT)
 //        
 //
 //        // Run Deploy Stage
