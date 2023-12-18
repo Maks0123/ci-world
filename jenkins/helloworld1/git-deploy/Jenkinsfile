@@ -14,7 +14,7 @@ node('agent') {
     try {
         // Set Job's ENVs
         env.GLOBAL_VAR_PATH = 'jenkins/global.var'
-        env.VAR_PATH = 'jenkins/helloworld1/project.var'
+        env.PROJECT_VAR_PATH = 'jenkins/helloworld1/project.var'
  
         // Run Prepare stage
         stage('Prepare') {
@@ -26,7 +26,7 @@ node('agent') {
             load(env.GLOBAL_VAR_PATH)
 
             println('Load Project vars...')
-            load(env.VAR_PATH)
+            load(env.PROJECT_VAR_PATH)
 
             println('Load Stages..')
             //buildStage = load(env.Build)

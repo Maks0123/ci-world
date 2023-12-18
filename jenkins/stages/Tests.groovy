@@ -1,4 +1,3 @@
-java.lang.reflect.Method method;
 /* Stage for package chart
  */
 def UnitTetst(String project, String stageName='') {
