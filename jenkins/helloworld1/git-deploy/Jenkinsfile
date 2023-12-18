@@ -6,7 +6,7 @@ def buildStage
 def gitStage
 def dockerStage
 def helmStage
-def testsStage
+// def testsStage
 def deployStage
 
 
@@ -33,7 +33,7 @@ node('agent') {
             //gitStage = load(env.Git)
             //dockerStage = load(env.Docker)
             //helmStage = load(env.Helm)
-            testsStage = load("${WORKSPACE}/jenkins/stages/Tests.groovy")
+            def testsStage = load(env.Tests)
            // deployStage = load(env.Deploy)
 
         }
