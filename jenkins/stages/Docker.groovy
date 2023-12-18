@@ -1,6 +1,3 @@
-import com.corp.project.mgmt.libs.*
-
-
 /* Stage for build docker image
  */
 def BuildImage(String project, String version, String stageName='') {

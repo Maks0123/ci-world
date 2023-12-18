@@ -1,6 +1,3 @@
-import com.corp.project.mgmt.libs.*
-
-
 /* Stage for build project
  */
 def BuildProject(String project, String stageName='') {

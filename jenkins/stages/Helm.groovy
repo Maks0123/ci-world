@@ -1,9 +1,6 @@
-import com.corp.project.mgmt.libs.*
-
-
 /* Stage for package chart
  */
-def BuildImage(String project, String version, String stageName='') {
+def HelmPackage(String project, String version, String stageName='') {
     stage(stageName ? stageName : 'Package chart') {
         dir(project) {
             String comm
