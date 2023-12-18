@@ -17,9 +17,9 @@ node('agent') {
 
         // Run Prepare stage
         stage('Prepare') {
+
             checkout(scm)
 
-            sh "ls -la"
             println('Load Project vars...')
             load(env.VAR_PATH)
 
@@ -28,7 +28,7 @@ node('agent') {
             gitStage = load(env.Git)
             dockerStage = load(env.Docker)
             helmStage = load(env.Helm)
-            testsStage = load(env.TESTS)
+            testsStage = load(env.Tests)
             deployStage = load(env.Deploy)
 
         }
