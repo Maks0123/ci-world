@@ -1,1 +1,6 @@
-env.GLOBAL_VAR_PATH = 'jenkins/global.var'
+env.Git = "${WORKSPACE}/jenkins/stages/GIT.groovy"
+env.Deploy = "${WORKSPACE}/jenkins/stages/Deploy.groovy"
+env.Docker = "${WORKSPACE}/jenkins/stages/Docker.groovy"
+env.Helm = "${WORKSPACE}/jenkins/stages/Helm.groovy"
+env.Tets = "${WORKSPACE}/jenkins/stages/Tests.groovy"
+env.Build = "${WORKSPACE}/jenkins/stages/Build.groovy"
