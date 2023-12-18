@@ -1,4 +1,4 @@
-env.Git = "${WORKSPACE}/jenkins/stages/GIT.groovy"
+env.Git = "${WORKSPACE}/jenkins/stages/Git.groovy"
 env.Deploy = "${WORKSPACE}/jenkins/stages/Deploy.groovy"
 env.Docker = "${WORKSPACE}/jenkins/stages/Docker.groovy"
 env.Helm = "${WORKSPACE}/jenkins/stages/Helm.groovy"
