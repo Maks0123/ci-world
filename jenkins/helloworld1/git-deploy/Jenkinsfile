@@ -13,10 +13,7 @@ def deployStage
 node('agent') {
     try {
         // Set Job's ENVs
-        env.SEED_JOB = getSeedJobName(JOB_NAME)
-        env.JOB_TYPE = 'release'
         env.VAR_PATH = 'jenkins/helloworld1/project.var'
-
 
         // Run Prepare stage
         stage('Prepare') {
@@ -38,12 +35,14 @@ node('agent') {
         gitStage.GitClone(project: env.PROJECT)
 
 
+        // Run Build Stage
         buildStage.BuildProject(project: env.PROJECT)
 
 
         // Run Docker Stage
         dockerStage.BuildImage(project: env.PROJECT,
                                version: env.VERSION)
+
 
         // Run Helm Stage
         helmStage.HelmPackage(project: env.PROJECT,
