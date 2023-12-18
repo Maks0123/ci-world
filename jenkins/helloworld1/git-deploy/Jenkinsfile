@@ -38,10 +38,10 @@ node('agent') {
 
         }
 
-        // Run Git Stage
-//        gitStage.GitClone(project: env.PROJECT)
-//
-//
+        //Run Git Stage
+        gitStage.GitClone(project: env.PROJECT)
+
+
 //        // Run Build Stage
 //        buildStage.BuildProject(project: env.PROJECT)
 //
