@@ -33,7 +33,7 @@ node('agent') {
             //gitStage = load(env.Git)
             //dockerStage = load(env.Docker)
             //helmStage = load(env.Helm)
-            testsStage = load(env.Tests)
+            testsStage = load("${WORKSPACE}/jenkins/stages/Tests.groovy")
            // deployStage = load(env.Deploy)
 
         }
