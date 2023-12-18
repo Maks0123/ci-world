@@ -3,7 +3,7 @@
 
 // Stages template
 def buildStage
-// def gitStage
+def gitStage
 def dockerStage
 def helmStage
 def testsStage

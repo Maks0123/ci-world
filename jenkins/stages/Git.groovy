@@ -2,11 +2,9 @@
  */
 def GitClone(String project, String stageName='') {
     stage(stageName ? stageName : 'Git clone') {
-        dir(project) {
             String comm
             println('Git clone... ')
             comm = "git clone https://github.com/Maks0123/${project}.git"
             sh(comm)
-        }
     }
 }
