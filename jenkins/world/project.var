@@ -1,0 +1,2 @@
+env.GERRIT_PROJECT = "helloworld1"
+env.VERSION = "0.0.2"

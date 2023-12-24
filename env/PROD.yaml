@@ -1,0 +1,13 @@
+world:
+  helloworld1:
+    resources:
+      postgres:
+        limits:
+          memory: "2500Mi"
+          cpu: "500m"
+  helloworld2:
+    resources:
+      commonwfsui:
+        limits:
+          memory: "2500Mi"
+          cpu: "500m"

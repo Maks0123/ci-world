@@ -1,0 +1,25 @@
+pipelines:
+  - project: "helloworld1"
+    template: "world_staging"
+    application: "world"
+    name: "helloworld1-Flow"
+    triggers:
+      - type: "webhook"
+        source: "helloworld1"
+        enabled: true
+  - project: "helloworld2"
+    template: "world_staging"
+    application: "world"
+    name: "helloworld2-Flow"
+    triggers:
+      - type: "webhook"
+        source: "helloworld2"
+        enabled: true
+  - project: "world"
+    template: "world_staging"
+    application: "world"
+    name: "world-Flow"
+    triggers:
+      - type: "webhook"
+        source: "world"
+        enabled: true

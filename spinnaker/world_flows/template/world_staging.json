@@ -1,0 +1,339 @@
+{
+    "application": "APPLICATION",
+    "description": "This pipeline is maintained by spinnaker as a code",
+    "disabled": false,
+    "name": "PIPELINE_NAME",
+    "keepWaitingPipelines": true,
+    "limitConcurrent": false,
+    "schema": "1",
+    "spelEvaluator": "v4",
+    "notifications": [
+      {
+        "address": "internal.com",
+        "level": "pipeline",
+        "type": "email",
+        "when": [
+          "pipeline.failed"
+        ]
+      }
+    ],
+    "parameterConfig": [
+      {
+        "name": "TRIGGER",
+        "default": "",
+        "description": "",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": false,
+        "required": false
+      },
+      {
+        "name": "CHART_NAME",
+        "default": "",
+        "description": "Name of the microservice chart chart",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": true,
+        "required": false
+      },
+      {
+        "name": "CHART_VERSION",
+        "default": "",
+        "description": "Version of the microservice chart ",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": true,
+        "required": false
+      },
+      {
+        "name": "CHART_REPO",
+        "default": "",
+        "description": "Repo of the microservice chart",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": true,
+        "required": false
+      },
+      {
+        "name": "TAGS",
+        "default": "STAGE",
+        "description": "Site values tags which has to be set to true during deployment",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": true,
+        "required": true
+      },
+      {
+        "name": "GIT_REFSPEC",
+        "default": "",
+        "description": "Git REF Spec",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": true,
+        "required": false
+      },
+      {
+        "name": "GIT_BRANCH",
+        "default": "master",
+        "description": "Gerrit Branch",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": true,
+        "required": false
+      },
+      {
+        "name": "SKIP_PRE_TESTING",
+        "default": "true",
+        "description": "",
+        "hasOptions": true,
+        "label": "",
+        "options": [
+          {
+            "value": "true"
+          },
+          {
+            "value": "false"
+          }
+        ],
+        "pinned": true,
+        "required": true
+      },
+      {
+        "name": "CHART_NAME",
+        "default": "world",
+        "description": "Name of the integration chart",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": false,
+        "required": false
+      },
+      {
+        "name": "CHART_VERSION",
+        "default": "0.0.0",
+        "description": "Version of the Integration Chart",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": false,
+        "required": false
+      },
+      {
+        "name": "CHART_REPO",
+        "default": "https://lab-bucket-nure.s3.amazonaws.com/world",
+        "description": "Repo of the Integration Chart",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": false,
+        "required": false
+      },
+      {
+        "name": "PATH_TO_SITE_VALUES_FILE",
+        "default": "env/STAGE.yaml",
+        "description": "The Path where all the necessary site values",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": true,
+        "required": true
+      },
+      {
+        "name": "PATH_TO_SITE_VALUES_OVERRIDE_FILE",
+        "default": "env/STAGE.yaml",
+        "description": "Path within the Repo to the location of the site values override file",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": true,
+        "required": true
+      },
+      {
+        "name": "ENV_LABEL",
+        "default": "world-release",
+        "description": "This is the label to search for that is attached to the environments",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": true,
+        "required": true
+      },
+      {
+        "name": "FLOW_URL_TAG",
+        "default": "Staging",
+        "description": "Flow URL Tag is used when locking the environment",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": false,
+        "required": true
+      },
+      {
+        "name": "WAIT_TIME",
+        "default": "20",
+        "description": "This is the time to wait for an Environment",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": false,
+        "required": true
+      },
+      {
+        "name": "HELM_TIMEOUT",
+        "default": "800",
+        "description": "Timeout for helmfile deploy",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": false,
+        "required": true
+      },
+      {
+        "name": "CHART_NAME",
+        "default": "helloworld1",
+        "description": "Application chart name",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": true,
+        "required": true
+      },
+      {
+        "name": "CHART_URL",
+        "default": "https://lab-bucket-nure.s3.amazonaws.com/helloworld1",
+        "description": "Link to Application chart repository",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": true,
+        "required": true
+      },
+      {
+        "name": "CHART_NAME",
+        "default": "helloworld2",
+        "description": "Application chart name",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": true,
+        "required": true
+      },
+      {
+        "name": "CHART_URL",
+        "default": "https://lab-bucket-nure.s3.amazonaws.com/helloworld2",
+        "description": "Drop Helm chart repository url. New application charts will be uploaded here",
+        "hasOptions": false,
+        "label": "",
+        "options": [
+          {
+            "value": ""
+          }
+        ],
+        "pinned": false,
+        "required": true
+      },
+      {
+        "name": "SKIP_CHART_RELEASE",
+        "default": "false",
+        "description": "If set to true - new Application chart will not be released.",
+        "hasOptions": true,
+        "label": "",
+        "options": [
+          {
+            "value": "true"
+          },
+          {
+            "value": "false"
+          }
+        ],
+        "pinned": true,
+        "required": true
+        }
+    ]   
+}
+    
+     
+    

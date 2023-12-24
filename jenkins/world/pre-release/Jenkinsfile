@@ -1,0 +1,73 @@
+#!/usr/bin/env groovy
+
+
+// Stages template
+def buildStage
+def gitStage
+def dockerStage
+def helmStage
+def testsStage
+def deployStage
+
+
+node('agent') {
+    try {
+        // Set Job's ENVs
+        env.GLOBAL_VAR_PATH = 'jenkins/global.var'
+        env.PROJECT_VAR_PATH = 'jenkins/helloworld1/project.var'
+ 
+        // Run Prepare stage
+        stage('Prepare') {
+
+            println('SCM...')
+            checkout(scm)
+
+            println('Load Global vars...')
+            load(env.GLOBAL_VAR_PATH)
+
+            println('Load Project vars...')
+            load(env.PROJECT_VAR_PATH)
+
+            println('Load Stages..')
+            //buildStage = load(env.Build)
+            //gitStage = load(env.Git)
+            //dockerStage = load(env.Docker)
+            //helmStage = load(env.Helm)
+            testsStage = load(env.Tests)
+           // deployStage = load(env.Deploy)
+
+        }
+
+          //Run Git Stage
+//        gitStage.GitClone(project: env.PROJECT)
+
+
+//        // Run Build Stage
+//        buildStage.BuildProject(project: env.PROJECT)
+//
+//
+//        // Run Docker Stage
+//        dockerStage.BuildImage(project: env.PROJECT,
+//                               version: env.VERSION)
+//
+//
+//        // Run Helm Stage
+//        helmStage.HelmPackage(project: env.PROJECT,
+//                              version: env.VERSION)
+//
+//
+          // Run Unittests Stage
+          testsStage.UnitTests(project: env.PROJECT,
+                               stageName: '')
+//        
+//
+//        // Run Deploy Stage
+//        deployStage.Deploy(project: env.PROJECT)
+
+    } catch (Exception errJob) {
+        println(errJob)
+        currentBuild.result = 'FAILURE'
+    } finally {
+       println("Finally")
+    }
+}
